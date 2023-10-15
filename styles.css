@@ -1,0 +1,61 @@
+#greeting {
+    font-size: 24px;
+}
+
+.container {
+    width: 100%;
+    padding: 0 20px;       /* 20px Padding an beiden Seiten, damit Inhalte nicht direkt am Rand kleben */
+    box-sizing: border-box; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header, .site-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.site-header .logo, .site-footer .footer-text {
+    display: inline-block;
+}
+
+nav {
+    display: flex;
+    width: calc(100% - 20px); /* Zieht 20px vom Gesamtwert ab, um Platz für Padding zu lassen */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+nav ul li {
+    margin-left: 5%;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ddd;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
