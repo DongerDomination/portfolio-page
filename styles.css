@@ -1,10 +1,22 @@
 #greeting {
     font-size: 24px;
+    color: #333; /* Dunkle Farbe für den Text */
 }
+
+body {
+    font-family: 'Roboto', sans-serif; /* oder eine andere Schriftart Ihrer Wahl */
+    /* ... weitere Stile ... */
+}
+
+html, body {
+    height: 100%; /* Ensure the full height is available to the body */
+    margin: 0; /* Reset any default margin */
+}
+
 
 .container {
     width: 100%;
-    padding: 0 20px;       /* 20px Padding an beiden Seiten, damit Inhalte nicht direkt am Rand kleben */
+    padding: 0 20px; /* 20px Padding an beiden Seiten */
     box-sizing: border-box; 
     display: flex;
     justify-content: space-between;
@@ -12,19 +24,21 @@
 }
 
 .site-header, .site-footer {
-    background-color: #333;
-    color: #fff;
+    flex-shrink: 0;
+    background-color: #6096B4; /* Dunkelblau */
+    color: #EEE9DA; /* Cremefarben für den Text */
     padding: 10px 0;
     width: 100%;
 }
 
 .site-header .logo, .site-footer .footer-text {
     display: inline-block;
+    color: #EEE9DA; /* Cremefarben für den Text */
 }
 
 nav {
     display: flex;
-    width: calc(100% - 20px); /* Zieht 20px vom Gesamtwert ab, um Platz für Padding zu lassen */
+    width: calc(100% - 40px); /* Anpassung für korrektes Padding */
 }
 
 nav ul {
@@ -32,30 +46,45 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* Align items to the right */
     width: 100%;
 }
 
 nav ul li {
-    margin-left: 5%;
+    margin-left: 25px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #BDCDD6; /* Helles Graublau */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #ddd;
+    color: #93BFCF; /* Helleres Blau als Hover-Effekt */
 }
 
 .main-content {
     flex: 1;
     padding: 20px;
     text-align: center;
+    background-color: #EEE9DA; /* Cremefarben für den Hintergrund */
+    color: #333; /* Dunkle Farbe für den Text */
 }
 
-nav ul li:first-child {
-    margin-left: 0;
+
+.page-container {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100%; /* Minimum height to fill the viewport */
+    background-color: #EEE9DA; /* Cremefarben für den Hintergrund des gesamten Containers */
+}
+
+/* Zusätzliche Anpassung für Links im Footer für bessere Sichtbarkeit */
+.site-footer nav ul li a {
+    color: #EEE9DA; /* Cremefarben für den Text */
+}
+
+.site-footer nav ul li a:hover {
+    color: #BDCDD6; /* Helles Graublau als Hover-Effekt */
 }
