@@ -116,6 +116,6 @@ nav ul li a:hover {
 #profile-image {
     margin-left: auto; /* Pushes the image to the right */
     margin-right: 0px; /* Aligns the image's right edge with the container's right padding */
-    max-width: 100%; /* Ensures the image is responsive and does not overflow */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 200%; /* Ensures the image is responsive and does not overflow */
+    height: 550px; /* Maintain aspect ratio */
 }
