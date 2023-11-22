@@ -15,7 +15,7 @@ body {
 
 .site-header {
     background-color: #000;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 .container {
@@ -52,7 +52,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ffa500; /* Orange */
+    color: #FFBD39; /* Orange */
     text-decoration: underline;
 }
 
@@ -63,16 +63,18 @@ nav ul li a:hover {
     padding: 0 ; /* Horizontal padding only */
 }
 
+
 .text-container {
-    /* Remove any left margin or padding that may offset the text */
-    margin-right: 0;
-    padding-left: 0;
-    /* Ensure the container only takes up as much space as needed */
-    flex: 1;
+    /* Align the text to the center */
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    flex-basis: 50%;
+    align-items: flex-start; /* This centers the child elements horizontally */
+    justify-content: center; /* This centers the child elements vertically */
+    text-align: flex-start; /* This centers the text within the text block */
+    flex: 1;
 }
+
 
 #custom-text {
     font-size: 64px;
@@ -85,7 +87,7 @@ nav ul li a:hover {
 }
 
 .job-title {
-    color: #FFA500; /* Orange color for the job title */
+    color: #FFBD39; /* Orange color for the job title */
     font-weight: 700;
 }
 
@@ -101,7 +103,7 @@ nav ul li a:hover {
 }
 
 .button.hire-me {
-    background-color: #FFA500; /* Orange background */
+    background-color: #FFBD39; /* Orange background */
     color: #000; /* Black text */
 }
 
@@ -113,9 +115,48 @@ nav ul li a:hover {
     background-color: #555;
 }
 
+.site-header {
+    /* Adjust padding as necessary to create equal space above and below the header content */
+    padding: 20px 0; /* Example: 20px top and bottom */
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content in the text-container */
+    align-items: flex-start; /* Align text to the start (left) */
+    flex-basis: calc(50% - 20px); /* Assuming a gap of 20px; adjust as necessary */
+    margin-right: 0px; /* This adds a gap between the text-container and the image */
+}
+
+#custom-text {
+    font-size: 64px; /* Set the font size to 64px */
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0; /* Adjust bottom margin to space buttons, remove top margin */
+}
+.button {
+    padding: 15px 30px;
+    margin: 5px; /* Reduce the margin to bring buttons closer together */
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons-container {
+    /* Align buttons to the start (left) and closer to the text */
+    align-items: flex-start;
+    gap: 20px; /* Adjust the gap between the buttons */
+}
+
 #profile-image {
     margin-left: auto; /* Pushes the image to the right */
     margin-right: 0px; /* Aligns the image's right edge with the container's right padding */
-    max-width: 200%; /* Ensures the image is responsive and does not overflow */
+    max-width: none; /* Ensures the image is responsive and does not overflow */
     height: 550px; /* Maintain aspect ratio */
 }
+
+
