@@ -15,7 +15,7 @@ body {
 
 .site-header {
     background-color: #000;
-    padding: 20px 0;
+    padding: 0;
 }
 
 .container {
@@ -41,12 +41,12 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 30px; /* Increased distance between menu items */
+    margin-left: 40px; /* Increased distance between menu items */
 }
 
 nav ul li a {
     color: #fff;
-    font-size: 18px; /* Increased font size */
+    font-size: 24px; /* Increased font size */
     text-decoration: none;
     transition: color 0.3s, text-decoration 0.3s;
 }
@@ -75,15 +75,11 @@ nav ul li a:hover {
     flex: 1;
 }
 
-
 #custom-text {
-    font-size: 64px;
-    color: #ffffff;
-    font-weight: bold; /* Assuming you want the text bold */
-    position: relative; /* Relative to the text-container */
-    top: 50%; /* Adjust these values to move the text into the blue box */
-    transform: translateY(-50%); /* Centers the text vertically within the text-container */
-    margin: 5px; /* Reset any default margins */
+        font-size: 64px;
+        color: #ffffff;
+        font-weight: bold;
+        margin: 0 0 20px 0;/* Reset any default margins */
 }
 
 .job-title {
@@ -105,10 +101,12 @@ nav ul li a:hover {
 .button.hire-me {
     background-color: #FFBD39; /* Orange background */
     color: #000; /* Black text */
+    font-size: 18px;
 }
 
 .button.my-works {
     /* Keep the same style as before */
+    font-size: 18px;
 }
 
 .button:hover {
@@ -147,9 +145,10 @@ nav ul li a:hover {
 }
 
 .buttons-container {
-    /* Align buttons to the start (left) and closer to the text */
-    align-items: flex-start;
-    gap: 20px; /* Adjust the gap between the buttons */
+    display: flex;
+    justify-content: flex-start; /* Align buttons to the start */
+    gap: 40px; /* Reduce gap between buttons if needed */
+    margin-top: 30px
 }
 
 #profile-image {
@@ -159,4 +158,71 @@ nav ul li a:hover {
     height: 550px; /* Maintain aspect ratio */
 }
 
+
+.about-me {
+    background-color: #111; /* Slightly lighter than your main background for contrast */
+    color: #fff;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me-content {
+    max-width: 800px; /* Adjust as necessary */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+}
+
+.about-me h2 {
+    color: #FFBD39; /* Reusing the orange color for visual consistency */
+    font-size: 48px; /* Large text for the title */
+    margin-bottom: 30px; /* Space between the title and the content */
+    animation: fadeInUp 1s ease;
+}
+
+.about-details {
+    animation: fadeInLeft 1s ease;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    animation: fadeInRight 1s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 
