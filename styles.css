@@ -61,6 +61,7 @@ nav ul li a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 0 ; /* Horizontal padding only */
+    padding-bottom: 100px;
 }
 
 
@@ -73,6 +74,22 @@ nav ul li a:hover {
     justify-content: center; /* This centers the child elements vertically */
     text-align: flex-start; /* This centers the text within the text block */
     flex: 1;
+}
+
+.hello-text {
+    color: #FFBD39; /* Orange color for consistency */
+    font-size: 20px; /* Size of the Hello text */
+    font-weight: 100; /* Bold font weight */
+    margin-bottom: 20px;
+
+}
+
+.job-text {
+    color: #ffffff; /* Orange color for consistency */
+    font-size: 35px; /* Size of the Hello text */
+    font-weight: 100; /* Bold font weight */
+    margin-top: 10px;
+
 }
 
 #custom-text {
@@ -125,6 +142,16 @@ nav ul li a:hover {
     align-items: flex-start; /* Align text to the start (left) */
     flex-basis: calc(50% - 20px); /* Assuming a gap of 20px; adjust as necessary */
     margin-right: 0px; /* This adds a gap between the text-container and the image */
+    
+}
+
+.text-container-1 {
+    animation: fadeOutIn 10s infinite;
+}
+
+.text-container-2 {
+    animation: fadeOutIn 10s infinite;
+    animation-delay: 5s; /* Beginnt in der Mitte der Animation des ersten Containers */
 }
 
 #custom-text {
@@ -192,6 +219,16 @@ nav ul li a:hover {
     height: auto;
     animation: fadeInRight 1s ease;
 }
+
+
+@keyframes fadeOutIn {
+    0%, 49.9% { 
+        opacity: 1; /* Voll sichtbar */
+      }
+      50%, 100% {
+        opacity: 0; /* Wieder voll sichtbar */
+      }
+    }
 
 @keyframes fadeInUp {
     from {
