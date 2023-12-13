@@ -80,7 +80,7 @@ nav ul li a:hover {
     color: #FFBD39; /* Orange color for consistency */
     font-size: 20px; /* Size of the Hello text */
     font-weight: 100; /* Bold font weight */
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 
 }
 
@@ -96,7 +96,7 @@ nav ul li a:hover {
         font-size: 64px;
         color: #ffffff;
         font-weight: bold;
-        margin: 0 0 20px 0;/* Reset any default margins */
+        margin: 0 0 40px 0;/* Reset any default margins */
 }
 
 .job-title {
@@ -142,24 +142,50 @@ nav ul li a:hover {
     align-items: flex-start; /* Align text to the start (left) */
     flex-basis: calc(50% - 20px); /* Assuming a gap of 20px; adjust as necessary */
     margin-right: 0px; /* This adds a gap between the text-container and the image */
-    
+    position: relative;
+    max-width: 900px;
 }
 
-.text-container-1 {
-    animation: fadeOutIn 10s infinite;
+.text-container-title {
+    position:absolute;
+    animation: textFadeScale 12s infinite;
+    transform: scale(0); /* Startet als Punk in der Mitte */
+    transform-origin: center;
 }
 
-.text-container-2 {
-    animation: fadeOutIn 10s infinite;
-    animation-delay: 5s; /* Beginnt in der Mitte der Animation des ersten Containers */
+
+#text2 {
+    font-size: 64px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-top: 0px;
+    animation-delay: 6s; /* Startet die Animation 5 Sekunden später */
+
+}
+
+#text2 h1 {
+    font-size: 42px;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+#title2 {
+    animation: textFadeScale 12s infinite;
+    animation-delay: 6s; 
+    transform: scale(0); /* Startet als Punk in der Mitte */
+    transform-origin: center;
+    margin-bottom: 0;
+    opacity: 0;
+    transform: scale(0.7);
 }
 
 #custom-text {
     font-size: 64px; /* Set the font size to 64px */
     color: #ffffff;
     font-weight: bold;
-    margin: 0; /* Adjust bottom margin to space buttons, remove top margin */
+    margin-bottom: 60; /* Adjust bottom margin to space buttons, remove top margin */
 }
+
 .button {
     padding: 15px 30px;
     margin: 5px; /* Reduce the margin to bring buttons closer together */
@@ -175,7 +201,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: flex-start; /* Align buttons to the start */
     gap: 40px; /* Reduce gap between buttons if needed */
-    margin-top: 30px
+    margin-top: 200px
 }
 
 #profile-image {
@@ -207,7 +233,7 @@ nav ul li a:hover {
     color: #FFBD39; /* Reusing the orange color for visual consistency */
     font-size: 48px; /* Large text for the title */
     margin-bottom: 30px; /* Space between the title and the content */
-    animation: fadeInUp 1s ease;
+    animation: fadeInUp 0.5s ease;
 }
 
 .about-details {
@@ -220,15 +246,51 @@ nav ul li a:hover {
     animation: fadeInRight 1s ease;
 }
 
+.my-animation {
+    animation-name: textFadeScale;
+    animation-duration: 1; /* Dauer der Animation auf 2 Sekunden gesetzt */
+    animation-iteration-count: infinite; /* Die Animation wird unendlich oft wiederholt */
+  }
+  
+  
+
+  @keyframes textFadeScale {
+    0%, 42% {
+      opacity: 1;
+      transform: scale(1); /* Voll sichtbar für 4,5 Sekunden */
+    }
+    49%, 50% {
+      opacity: 0;
+      transform: scale(0.7); /* Schnelle Änderung innerhalb von 0,5 Sekunden */
+    }
+    50%, 92% {
+      opacity: 0;
+      transform: scale(0.7); /* Unsichtbar für 4,5 Sekunden */
+    }
+    99%, 100% {
+      opacity: 1;
+      transform: scale(1); /* Schnelle Rückkehr zur vollen Sichtbarkeit in 0,5 Sekunden */
+    }
+  }
+  
+  
+   
 
 @keyframes fadeOutIn {
-    0%, 49.9% { 
-        opacity: 1; /* Voll sichtbar */
-      }
-      50%, 100% {
-        opacity: 0; /* Wieder voll sichtbar */
-      }
+    0%, 48.5% { 
+      opacity: 1; /* Voll sichtbar für 4,9 Sekunden */
     }
+    48.6%, 51.5% {
+      opacity: 0; /* Schneller Übergang zur Unsichtbarkeit in 0,1 Sekunden */
+    }
+    51.6%, 98.5% {
+      opacity: 0; /* Wieder voll sichtbar für 4,9 Sekunden */
+    }
+    98.6%, 101.5% {
+      opacity: 1; /* Schneller Übergang zur Unsichtbarkeit in 0,1 Sekunden */
+    }
+  }
+  
 
 @keyframes fadeInUp {
     from {
