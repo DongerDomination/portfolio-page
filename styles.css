@@ -215,35 +215,17 @@ nav ul li a:hover {
 .about-me {
     background-color: #111; /* Slightly lighter than your main background for contrast */
     color: #fff;
-    padding: 50px 20px;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
 }
 
-.about-me-content {
-    max-width: 800px; /* Adjust as necessary */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left;
-}
 
 .about-me h2 {
     color: #FFBD39; /* Reusing the orange color for visual consistency */
     font-size: 48px; /* Large text for the title */
-    margin-bottom: 30px; /* Space between the title and the content */
+    margin-bottom: 20px; /* Space between the title and the content */
     animation: fadeInUp 0.5s ease;
-}
-
-.about-details {
-    animation: fadeInLeft 1s ease;
-}
-
-.about-image img {
-    max-width: 100%;
-    height: auto;
-    animation: fadeInRight 1s ease;
 }
 
 .my-animation {
@@ -252,7 +234,136 @@ nav ul li a:hover {
     animation-iteration-count: infinite; /* Die Animation wird unendlich oft wiederholt */
   }
   
+.skills-section {
+    background-color: #111; /* Dunkler Hintergrund */
+    color: #fff;
+    padding: 50px 20px;
+}
+
+.skills-section .container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
   
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.skill {
+    flex-basis: calc(50% - 20px); /* Stellen Sie sicher, dass zwei Fähigkeiten pro Zeile passen, mit etwas Abstand dazwischen */
+    margin: 10px;
+    background-color: #333; /* Dunkler Hintergrund für die Skill-Bar */
+    color: #fff;
+    padding: 10px;
+  }
+
+.skill-name {
+    margin-right: 10px; /* Abstand zwischen Skill-Name und Prozentanzeige */
+  }
+  
+
+.skill-bar {
+    background-color: #FFBD39; /* Hintergrundfarbe der gefüllten Skill-Bar */
+    height: 10px;
+    width: 0; /* Startbreite, sollte per JavaScript oder direkt im HTML entsprechend des Prozentwerts gefüllt werden */
+  }
+
+.skill-percentage {
+    background-color: #FFBD39; /* Orange Farbe für die Füllung */
+    height: 1%;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 2s ease-out;
+}
+/* Fügen Sie diese Klasse mit JavaScript hinzu, wenn der Skill-Bereich sichtbar wird */
+.skill-percentage.visible {
+    transform: scaleX(1);
+}
+
+
+.container2 {
+    justify-content: space-between;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    width: 100%; /* Ensure the container is full width */
+    max-width: 1200px; /* Match this to the header's max width if necessary */
+    margin: auto; /* Center the container */
+}
+
+.title-container h1 {
+    text-align: center;
+    font-size: 62px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    
+    
+}
+
+.title-container h3 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.collum {
+    width: 47% /* Adjust this value to fit your needs */
+}
+
+.block {
+    background-color: #1A1A1A;
+    padding: 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 40px; /* Add some space between the blocks */
+    text-align: center; /* Center the content */
+}
+
+.block .date {
+    color: #FFBD39; /* Replace with the exact color of your website */
+    font-weight: bold;
+}
+
+.block h2 {
+    font-size: 26px;
+}
+
+.block .position, .block .desc-block {
+    color: #999999; /* Replace with the exact color of your website */
+    font-size: 18px;
+}
+
+.contact-me {
+    background-color: #111; /* Slightly lighter than your main background for contrast */
+    color: #fff;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
 
   @keyframes textFadeScale {
     0%, 42% {
@@ -271,9 +382,8 @@ nav ul li a:hover {
       opacity: 1;
       transform: scale(1); /* Schnelle Rückkehr zur vollen Sichtbarkeit in 0,5 Sekunden */
     }
-  }
+  } 
   
-
 @keyframes fadeOutIn {
     0%, 48.5% { 
       opacity: 1; /* Voll sichtbar für 4,9 Sekunden */
