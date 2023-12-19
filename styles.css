@@ -279,6 +279,35 @@ nav ul li a:hover {
     min-width: 160px; /* Stellt sicher, dass die Breite niemals kleiner als 120px ist */
     text-align: left;
 }
+
+.container5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px; /* Gleiche max-width wie .container */
+    margin: 0 auto; /* Zentriert den Container */
+    padding: 20px 0px; /* Adjust this padding to ensure it aligns with the header */
+
+    box-sizing: border-box; /* Damit das padding und border in der Breite enthalten sind */
+}
+
+
+.myskills {
+    background-color: #111; /* Slightly lighter than your main background for contrast */
+    color: #fff;
+    display: grid;
+    justify-content: center;
+}
+
+.myskills > * {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 1240px;
+    margin: 0 auto;
+}
   
 .skills-section {
     background-color: #111; /* Dark background */
@@ -336,13 +365,25 @@ nav ul li a:hover {
 
 
 .container2 {
-    justify-content: space-between;
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    width: 100%; /* Ensure the container is full width */
+    width: 100%;
     max-width: 1200px; /* Match this to the header's max width if necessary */
-    margin: auto; /* Center the container */
+    margin: 0 auto; /* Center the container */
+    display: grid;
+    align-items: center;
+}
+
+.container4 {
+    width: 100%;
+    max-width: 1200px; /* Match this to the header's max width if necessary */
+    margin: 0 auto; /* Center the container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-container {
+    text-align: center;
+    margin-bottom: 30px; /* Space between title and icons grid */
 }
 
 .title-container h1 {
@@ -376,30 +417,117 @@ nav ul li a:hover {
     border-radius: 5px;
     box-sizing: border-box;
     margin-bottom: 40px; /* Add some space between the blocks */
-    text-align: center; /* Center the content */
+    text-align: left; /* Center the content */
 }
 
 .block .date {
     color: #FFBD39; /* Replace with the exact color of your website */
-    font-weight: bold;
+    font-weight:900;
+    font-size: 30px;
 }
 
 .block h2 {
-    font-size: 26px;
+    font-size: 24px;
+    font-weight: normal;
 }
 
-.block .position, .block .desc-block {
+.block .desc-block {
     color: #999999; /* Replace with the exact color of your website */
     font-size: 18px;
 }
 
+.block .position {
+    color: #999999; /* Replace with the exact color of your website */
+    font-size: 18px;
+    font-variant: small-caps; ;
+}
+
 .contact-me {
-    background-color: #111; /* Slightly lighter than your main background for contrast */
+    background-color: #000; /* Slightly lighter than your main background for contrast */
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0; /* Adjust padding as needed */
+}
+
+.icons-grid {
     display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates four columns */
+    width: 100%;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: space-around; /* Adjust as needed for layout */
+    flex-wrap: wrap; /* Allows icons to wrap to the next line on small screens */
+    margin-bottom: 20px; /* Space below the icon container */
+    gap: 60px;
+}
+
+.icon-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center icon block content */
+}
+
+.icon-wrapper {
+    width: 140px; /* Width of the circle */
+    height: 120px; /* Height of the circle */
+    border-radius: 50%; /* Make it round */
+    background-color: #333; /* Circle color */
+    display: flex;
     justify-content: center;
     align-items: center;
 }
+
+
+.icon-description {
+    text-align: center; /* Center the text below the circle */
+    margin-top: 20px; /* Space between the icon and the text */
+    margin-bottom: 60px;
+}
+
+
+.icon {
+    fill: #FFBD39; /* Orange color for the icon */
+    width: 40px; /* Width of the icon */
+    height: 40px; /* Height of the icon */
+}
+
+.icon-text {
+    display: grid;
+    color: #fff; /* Text color */
+    font-size: 24px; /* Text size */
+    font-weight: bold; /* Text weight */
+    margin-bottom: 10px;
+
+}
+
+.icon-text-2 {
+    color: #999999; /* Text color */
+    font-size: 22px; /* Text size */
+    font-weight: normal; /* Text weight */
+
+}
+
+.space {
+    margin: 60px
+}
+
+/* Set up the initial state for sections to animate in */
+.section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* This class will be added by JavaScript when the section scrolls into view */
+.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
   @keyframes textFadeScale {
     0%, 42% {
