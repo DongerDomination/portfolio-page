@@ -217,8 +217,16 @@ nav ul li a:hover {
     color: #fff;
     display: grid;
     justify-content: center;
-    align-items: center;
 }
+
+.about-me > * {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 1240px;
+    margin: 0 auto;
+}
+
 
 
 .about-me h2 {
@@ -234,57 +242,96 @@ nav ul li a:hover {
     animation-iteration-count: infinite; /* Die Animation wird unendlich oft wiederholt */
   }
   
-.skills-section {
-    background-color: #111; /* Dunkler Hintergrund */
-    color: #fff;
-    padding: 50px 20px;
-}
 
-.skills-section .container {
-    max-width: 800px;
-    margin: auto;
-}
-
-.skills {
+.container3 {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px; /* Gleiche max-width wie .container */
+    margin: 0 auto; /* Zentriert den Container */
+    padding: 20px 0px; /* Adjust this padding to ensure it aligns with the header */
+
+    box-sizing: border-box; /* Damit das padding und border in der Breite enthalten sind */
 }
 
-.skills-container {
+.about-me ul {
+    list-style-type: none; /* Removes the default list style */
+    padding: 0; /* Resets padding to 0 */
+    margin: 0; /* Resets margin to 0 */;
+}
+
+.about-me ul li {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
+    flex-direction: row;
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #fff; /* This is white, adjust if you have a different color scheme */
+    margin-bottom: 40px; /* Adds some space between the list items */
+    align-items: baseline; /* Stellt sicher, dass die Texte auf derselben Grundlinie sind */
+}
+
+.about-me ul li::before {
+    content: attr(data-label); /* Use a data attribute for the label */
+    font-weight: bold; /* Makes the label bold */
+    margin-right: 100px; /* Fügt etwas Abstand zwischen Label und Wert hinzu */
+    width: 300px; /* Legt eine feste Breite für die Labels fest */
+    min-width: 160px; /* Stellt sicher, dass die Breite niemals kleiner als 120px ist */
+    text-align: left;
+}
   
+.skills-section {
+    background-color: #111; /* Dark background */
+    color: #fff;
+    padding: 20px;
+}
+
 .skills {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 20px; /* Space between skills */
+    width: 100%;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.skill {
+    flex: 0 0 calc(50% - 10px); 
+    box-sizing: border-box; /* Stellt sicher, dass die Padding und Borders innerhalb der Breite des Elements sind */
+    display: flex;
+    flex-direction: column; /* Stapelt die Inhalte innerhalb des Skill-Elements vertikal */
 }
 
 
 .skill-name {
-    margin-right: 10px; /* Abstand zwischen Skill-Name und Prozentanzeige */
-  }
+    font-weight: bold;
+}
 
-.skill-bar {
-    background-color: #FFBD39; /* Hintergrundfarbe der gefüllten Skill-Bar */
+  .skill-bar {
+    width: 100%;
+    background-color: #333; /* Dark grey background for the entire skill bar */
+    position: relative;
     height: 10px;
-    width: 0; /* Startbreite, sollte per JavaScript oder direkt im HTML entsprechend des Prozentwerts gefüllt werden */
-  }
+    margin: 20px 0 20px 0;
+    border-radius: 2px;
+}
 
 .skill-percentage {
-    background-color: #FFBD39; /* Orange Farbe für die Füllung */
-    height: 1%;
+    background-color: #FFBD39; /* Orange color for the filled part */
     position: absolute;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 2s ease-out;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 2px;
+    /* No changes here */
 }
-/* Fügen Sie diese Klasse mit JavaScript hinzu, wenn der Skill-Bereich sichtbar wird */
-.skill-percentage.visible {
-    transform: scaleX(1);
+
+.skill-percent {
+    position:absolute; /* Position it relative to skill-percentage */
+    right: 0; /* Align to the right */
+    top: -47.9px; /* Position it above the skill bar */
+    color: #fff; /* White color text */
+    padding: 0 5px; /* Padding to ensure it doesn't touch the edges */
 }
 
 
@@ -302,17 +349,16 @@ nav ul li a:hover {
     text-align: center;
     font-size: 62px;
     margin-bottom: 10px;
-    margin-top: 40px;
-    
-    
+    margin-top: 40px; 
 }
 
 .title-container h3 {
     text-align: center;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: normal;
     margin-bottom: 40px;
     margin-top: 20px;
+    width: 100%;
 }
 
 .row {
