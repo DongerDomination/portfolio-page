@@ -1,0 +1,74 @@
+{
+  "profiles": [
+    {
+      "id": 1,
+      "profileImage": "images/orange.png",
+      "colorCode": "#FFBD39",
+      "logo": "images/FFBD39.png",
+	    "favicon": "images/FFBD39.png"
+    },
+    {
+      "id": 2,
+      "profileImage": "images/grün.png",
+      "colorCode": "#3A8838",
+      "logo": "images/3a8838.png",
+	    "favicon": "images/3a8838.png"
+    },
+    {
+      "id": 3,
+      "profileImage": "images/violett.png",
+      "colorCode": "#6f32a4",
+      "logo": "images/6f32a4.png",
+	    "favicon": "images/6f32a4.png"
+    },
+    {
+      "id": 4,
+      "profileImage": "images/türkis.png",
+      "colorCode": "#40bfbf",
+      "logo": "images/40bfbf.png",
+	    "favicon": "images/40bfbf.png"
+    },
+    {
+      "id": 5,
+      "profileImage": "images/blau.png",
+      "colorCode": "#5679af",
+      "logo": "images/5679af.png",
+	    "favicon": "images/5679af.png"
+    },
+    {
+      "id": 6,
+      "profileImage": "images/pink.png",
+      "colorCode": "#ab3394",
+      "logo": "images/ab3394.png",
+	    "favicon": "images/ab3394.png"
+    },
+    {
+      "id": 7,
+      "profileImage": "images/rot.png",
+      "colorCode": "#ae0a0a",
+      "logo": "images/ae0a0a.png",
+	    "favicon": "images/ae0a0a.png"
+    },
+    {
+      "id": 8,
+      "profileImage": "images/gelb.png",
+      "colorCode": "#ffdd03",
+      "logo": "images/ffdd03.png",
+	    "favicon": "images/ffdd03.png"
+    },
+    {
+      "id": 9,
+      "profileImage": "images/hellgrün.png",
+      "colorCode": "#15e974",
+      "logo": "images/15e974.png",
+	    "favicon": "images/15e974.png"
+    },
+    {
+      "id": 10,
+      "profileImage": "images/hellrot.png",
+      "colorCode": "#f74242",
+      "logo": "images/f74242.png",
+	    "favicon": "images/f74242.png"
+    }
+  ]
+}

@@ -1,5 +1,14 @@
+:root {
+    --dynamic-color: #FFBD39; /* Default color */
+}
+
+.dynamic-color {
+    color: var(--dynamic-color);
+}
+
 body {
     font-family: 'Roboto', sans-serif;
+    padding-top: 180px;
     margin: 0;
     height: 100%;
     background-color: #000; /* Black background for the whole page */
@@ -14,8 +23,13 @@ body {
 }
 
 .site-header {
-    background-color: #000;
-    padding: 0;
+    position: fixed; /* Keep the header fixed at the top */
+    top: 0; /* Align to the top of the page */
+    left: 0; /* Align to the left of the page */
+    width: 100%; /* Ensure it spans the full width of the viewport */
+    background-color: #000; /* Your desired background color */
+    z-index: 1000; /* Ensure it stays above other content */
+    height: 100px;
 }
 
 .container {
@@ -29,7 +43,7 @@ body {
 }
 
 .site-header .logo img {
-    max-height: 70px;
+    max-height: 60px;
 }
 
 nav ul {
@@ -52,7 +66,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #FFBD39; /* Orange */
+    color: var(--dynamic-color); /* Orange */
     text-decoration: underline;
 }
 
@@ -77,8 +91,8 @@ nav ul li a:hover {
 }
 
 .hello-text {
-    color: #FFBD39; /* Orange color for consistency */
-    font-size: 20px; /* Size of the Hello text */
+    color: var(--dynamic-color); /* Orange color for consistency */
+    font-size: 24px; /* Size of the Hello text */
     font-weight: 100; /* Bold font weight */
     margin-bottom: 0px;
 
@@ -100,7 +114,7 @@ nav ul li a:hover {
 }
 
 .job-title {
-    color: #FFBD39; /* Orange color for the job title */
+    color: var(--dynamic-color); /* Orange color for the job title */
     font-weight: 700;
 }
 
@@ -116,7 +130,7 @@ nav ul li a:hover {
 }
 
 .button.hire-me {
-    background-color: #FFBD39; /* Orange background */
+    background-color: var(--dynamic-color); /* Orange background */
     color: #000; /* Black text */
     font-size: 18px;
 }
@@ -132,7 +146,7 @@ nav ul li a:hover {
 
 .site-header {
     /* Adjust padding as necessary to create equal space above and below the header content */
-    padding: 20px 0; /* Example: 20px top and bottom */
+    padding: 0px 0; /* Example: 20px top and bottom */
 }
 
 .text-container {
@@ -164,7 +178,8 @@ nav ul li a:hover {
 }
 
 #text2 h1 {
-    font-size: 42px;
+    padding-left: 5px;
+    font-size: 32px;
     font-weight: normal;
     margin-top: 10px;
 }
@@ -201,7 +216,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: flex-start; /* Align buttons to the start */
     gap: 40px; /* Reduce gap between buttons if needed */
-    margin-top: 200px
+    margin-top: 240px
 }
 
 #profile-image {
@@ -230,7 +245,7 @@ nav ul li a:hover {
 
 
 .about-me h2 {
-    color: #FFBD39; /* Reusing the orange color for visual consistency */
+    color: var(--dynamic-color); /* Reusing the orange color for visual consistency */
     font-size: 48px; /* Large text for the title */
     margin-bottom: 20px; /* Space between the title and the content */
     animation: fadeInUp 0.5s ease;
@@ -346,7 +361,7 @@ nav ul li a:hover {
 }
 
 .skill-percentage {
-    background-color: #FFBD39; /* Orange color for the filled part */
+    background-color: var(--dynamic-color); /* Orange color for the filled part */
     position: absolute;
     height: 100%;
     top: 0;
@@ -394,6 +409,7 @@ nav ul li a:hover {
 }
 
 .title-container h3 {
+    color: #999999;
     text-align: center;
     font-size: 30px;
     font-weight: normal;
@@ -421,7 +437,7 @@ nav ul li a:hover {
 }
 
 .block .date {
-    color: #FFBD39; /* Replace with the exact color of your website */
+    color: var(--dynamic-color); /* Replace with the exact color of your website */
     font-weight:900;
     font-size: 30px;
 }
@@ -433,7 +449,7 @@ nav ul li a:hover {
 
 .block .desc-block {
     color: #999999; /* Replace with the exact color of your website */
-    font-size: 18px;
+    font-size: 24px;
 }
 
 .block .position {
@@ -448,7 +464,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0; /* Adjust padding as needed */
+    padding: 20px 0; /* Adjust padding as needed */
 }
 
 .icons-grid {
@@ -472,8 +488,8 @@ nav ul li a:hover {
 }
 
 .icon-wrapper {
-    width: 140px; /* Width of the circle */
-    height: 120px; /* Height of the circle */
+    width: 130px; /* Width of the circle */
+    height: 110px; /* Height of the circle */
     border-radius: 50%; /* Make it round */
     background-color: #333; /* Circle color */
     display: flex;
@@ -485,12 +501,11 @@ nav ul li a:hover {
 .icon-description {
     text-align: center; /* Center the text below the circle */
     margin-top: 20px; /* Space between the icon and the text */
-    margin-bottom: 60px;
 }
 
 
 .icon {
-    fill: #FFBD39; /* Orange color for the icon */
+    fill: var(--dynamic-color); /* Orange color for the icon */
     width: 40px; /* Width of the icon */
     height: 40px; /* Height of the icon */
 }
@@ -508,8 +523,105 @@ nav ul li a:hover {
     color: #999999; /* Text color */
     font-size: 22px; /* Text size */
     font-weight: normal; /* Text weight */
-
 }
+
+.container6 {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    max-width: 1200px; /* Set the max-width */
+    width: 100%; /* Full width */
+    padding: 0 20px; /* Padding on the sides */
+    margin: auto; /* Auto margins for horizontal centering */
+}
+
+.footer {
+    background-color: #000; /* Dark background for footer */
+    color: #fff; /* White text color */
+    padding: 80px 0; /* Padding at top and bottom */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center all content horizontally */
+    align-items: center; /* Center all content vertically */
+    font-size: 18px; /* Footer text size */   
+}
+
+.footer .footer-nav {
+    display: flex;
+    align-items: center;
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Reset padding */
+}
+
+.footer .footer-nav li {
+    padding: 0 20px 20px; /* Space out the nav items */
+}
+
+.footer .footer-nav li a {
+    color: #fff; /* White text color */
+    text-decoration: none; /* No underline */
+    transition: color 0.3s ease; /* Transition for hover effect */
+    color: #999999;
+}
+
+.footer .footer-nav li a:hover {
+    color: var(--dynamic-color); /* Color change on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+.footer-nav-and-newsletter {
+    display: flex;
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+    flex-wrap: wrap; /* Wrap onto next line on small screens */
+    gap: 20px; /* Space between navigation and newsletter */
+    width: 100%; /* Take full width of the parent */
+}
+
+.footer .footer-nav, .footer .newsletter {
+    display: flex;
+    justify-content: center; /* Center content */
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.footer .newsletter {
+    display: flex;
+    align-items: center;
+}
+
+.footer .footer-nav {
+    display: flex;
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Reset padding */
+    margin: 0; /* Reset margin */
+    gap: 20px; /* Space out the nav items */
+}
+
+.footer .newsletter input[type="email"] {
+    margin-top: -20px;
+    padding: 10px;
+    margin-right: 10px; /* Space between the input and the button */
+    border: none;
+    border-radius: 5px; /* Rounded corners for the input field */
+}
+
+.footer .newsletter button {
+    margin-top: -20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Rounded corners for the button */
+    background-color: var(--dynamic-color); /* Use the dynamic color variable for the button */
+    color: #000; /* Black text for the button */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.footer .newsletter button:hover {
+    background-color: #555; /* Darken the button on hover */
+}
+
 
 .space {
     margin: 60px
@@ -527,6 +639,11 @@ nav ul li a:hover {
     opacity: 1;
     transform: translateY(0);
 }
+
+html {
+    scroll-behavior:smooth;
+  }  
+
 
 
   @keyframes textFadeScale {
@@ -547,22 +664,6 @@ nav ul li a:hover {
       transform: scale(1); /* Schnelle Rückkehr zur vollen Sichtbarkeit in 0,5 Sekunden */
     }
   } 
-  
-@keyframes fadeOutIn {
-    0%, 48.5% { 
-      opacity: 1; /* Voll sichtbar für 4,9 Sekunden */
-    }
-    48.6%, 51.5% {
-      opacity: 0; /* Schneller Übergang zur Unsichtbarkeit in 0,1 Sekunden */
-    }
-    51.6%, 98.5% {
-      opacity: 0; /* Wieder voll sichtbar für 4,9 Sekunden */
-    }
-    98.6%, 101.5% {
-      opacity: 1; /* Schneller Übergang zur Unsichtbarkeit in 0,1 Sekunden */
-    }
-  }
-  
 
 @keyframes fadeInUp {
     from {
@@ -575,25 +676,4 @@ nav ul li a:hover {
     }
 }
 
-@keyframes fadeInLeft {
-    from {
-        transform: translateX(-20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        transform: translateX(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
 

@@ -6,18 +6,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Iteriere über alle Skill-Prozente
+    // Berechnung für die Position der Skill-Prozentangaben
     document.querySelectorAll('.skill-percent').forEach((skillPercent) => {
-        // Lese den prozentualen Wert des zugehörigen skill-percentage
         const percentage = parseFloat(skillPercent.previousElementSibling.getAttribute('data-percentage'));
-        
-        // Berechne die neue Position basierend auf dem prozentualen Wert
         const parentWidth = skillPercent.parentNode.offsetWidth;
         const newPosition = (percentage / 100) * parentWidth;
-        
-        // Aktualisiere die Position des skill-percent Elements
         skillPercent.style.left = `${newPosition - skillPercent.offsetWidth}px`;
     });
+
+    // Intersection Observer für Animationen beim Scrollen
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -28,36 +25,77 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }, {
         rootMargin: '0px',
-        threshold: 0.1
+        threshold: 0.15
     });
 
     document.querySelectorAll('.section').forEach(section => {
         observer.observe(section);
     });
-});
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    // Set up the Intersection Observer
-    const observer = new IntersectionObserver((entries) => {
-        // For each entry check if it is intersecting (visible)
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
-            } else {
-                entry.target.classList.remove('in-view');
-            }
+    // Höhe des Headers
+    const headerHeight = 70; // Höhe Ihres Headers
+
+    const scrollToSection = (event) => {
+        event.preventDefault();
+        const sectionId = event.target.getAttribute('href').substring(1);
+        const section = document.getElementById(sectionId);
+        window.scrollTo({
+            top: section.offsetTop - headerHeight,
+            behavior: 'smooth'
         });
-    }, {
-        // Adjust the root margin as needed to control when the animation starts
-        rootMargin: '0px',
-        threshold: 0.1 // Trigger when at least 10% of the section is visible
+    };
+
+    // Event-Listener für die Navigation
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        const sectionId = link.getAttribute('href').substring(1);
+        if (sectionId) {
+            link.addEventListener('click', scrollToSection);
+        }
     });
 
-    // Target the sections you want to observe
-    document.querySelectorAll('.section').forEach(section => {
-        observer.observe(section);
+    const myWorksButton = document.querySelector('.my-works');
+
+    // Add click event listener to 'My Works' button
+    myWorksButton.addEventListener('click', function() {
+        // Use 'scrollIntoView' to scroll to 'Projects' section
+        document.getElementById('projects').scrollIntoView({
+            behavior: 'smooth' // Smooth scroll
+        });
     });
+    
 });
 
+// Funktion zum Aktualisieren der Seite mit neuen Daten aus dem JSON-Objekt
+function updatePageData(data) {
+    document.querySelector('[data-image="logo"]').src = data.logo;
+    document.querySelector('[data-image="profile"]').src = data.profileImage;
+    
+    // Assuming you have added data-image="favicon" to the link tag for favicon
+    const faviconLink = document.querySelector('[data-image="favicon"]');
+    if (faviconLink) {
+        faviconLink.href = data.favicon; // 'data.favicon' should be the path to the new icon in your data
+    }
+    
+    document.documentElement.style.setProperty('--dynamic-color', data.colorCode);
+    
+    document.querySelectorAll('[data-color="icon-color"]').forEach((icon) => {
+        icon.querySelector('path').setAttribute('fill', data.colorCode);
+    });
+}
 
 
+// Event-Listener für den "Hire Me" Button
+document.querySelector('.button.hire-me').addEventListener('click', function() {
+    fetch('http://localhost:3000/profiles')
+    .then(response => response.json())
+    .then(data => {
+        const randomItem = data[Math.floor(Math.random() * data.length)];
+        updatePageData(randomItem);
+    })
+    .catch(error => console.error('Error:', error));
+});
+
+// Laden von zufälligen Daten beim Start
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.button.hire-me').click();
+});
