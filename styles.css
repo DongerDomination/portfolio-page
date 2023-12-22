@@ -58,6 +58,7 @@ nav ul li {
     margin-left: 40px; /* Increased distance between menu items */
 }
 
+
 nav ul li a {
     color: #fff;
     font-size: 24px; /* Increased font size */
@@ -72,7 +73,7 @@ nav ul li a:hover {
 
 .main-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0 ; /* Horizontal padding only */
     padding-bottom: 100px;
@@ -121,6 +122,7 @@ nav ul li a:hover {
 .button {
     padding: 10px 20px;
     margin: 10px;
+    min-width: 120px;
     border: none;
     border-radius: 5px;
     background-color: #333;
@@ -214,9 +216,10 @@ nav ul li a:hover {
 
 .buttons-container {
     display: flex;
-    justify-content: flex-start; /* Align buttons to the start */
-    gap: 40px; /* Reduce gap between buttons if needed */
-    margin-top: 240px
+    justify-content: center; /* Center the buttons */
+    gap: 20px; /* Space between the buttons */
+    margin-top: 240px; /* Space from the top, adjust as needed */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 #profile-image {
@@ -644,6 +647,23 @@ html {
     scroll-behavior:smooth;
   }  
 
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+* {
+    box-sizing: border-box; /* Ensures padding and borders are included in the total width and height */
+    max-width: 100%; /* Prevents any element from overflowing horizontally */
+}
+
 
 
   @keyframes textFadeScale {
@@ -674,6 +694,402 @@ html {
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+@media (max-width: 1200px) {
+    .container,
+    .container2,
+    .container3,
+    .container4,
+    .container5,
+    .container6 {
+        padding: 0 15px; /* Verkleinern des Seitenabstands */
+        max-width: 100%; /* Erlaubt dem Container, die volle Breite zu nutzen */
+
+    }
+
+    .about-me,
+    .projects,
+    .myskills,
+    .contact-me {
+        padding: 20px 0; /* Reduzierung des oberen und unteren Abstands */
+        width: 100%;
+        display:flex;
+        align-items: center;
+    }
+
+    .site-header {
+        height: auto; /* Adjust the height automatically */
+        padding: 10px; /* Add padding to shrink the header size */
+        width: 100%; /* Ensure the header spans the full width of the viewport */
+    }
+    .page-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        width: 100%;
+    }
+
+    
+
+    .main-content{
+        display: flex;
+        width: 100%;
+        align-items: center;
+    }
+
+    .body{
+        display: block;
+        align-items: center;
+
+    }
+
+    .site-header  {
+        position: fixed;
+        left: 0;
+        right: 0; /* Ensures it stretches across the full width */
+    }
+
+    .about-me h2, .about-me h3, .about-me ul {
+        width: 100%; /* Full width */
+        margin: 0 auto; /* Center everything horizontally */
+    }
+    
+    .about-me ul li {
+        justify-content: center; /* Center the list items */
+        text-align: center; /* Center-align the text */
+        display: block; /* Stack list items vertically */
+    }
+
+    .about-me ul li::before {
+        content: attr(data-label); /* Use a data attribute for the label */
+        font-weight: bold; /* Makes the label bold */
+        display: block; /* Place the label above the content */
+        margin-bottom: 5px; /* Space between label and content */
+    }
+
+}
+
+@media (max-width: 950px) {
+    .container,
+    .container2,
+    .container3,
+    .container4,
+    .container5,
+    .container6 {
+        padding: 0 15px; /* Verkleinern des Seitenabstands */
+        max-width: 100%; /* Erlaubt dem Container, die volle Breite zu nutzen */
+
+    }
+
+    .about-me,
+    .projects,
+    .myskills,
+    .contact-me {
+        padding: 20px 0; /* Reduzierung des oberen und unteren Abstands */
+        width: 100%;
+        display:flex;
+        align-items: center;
+    }
+    .site-header {
+        height: auto; /* Adjust the height automatically */
+        padding: 10px; /* Add padding to shrink the header size */
+    }
+
+    #custom-text {
+        font-size: 48px; /* Smaller font size for tablets */
+    }
+
+    #text1 {
+        font-size: 24px;  /* Smaller font size for tablets */
+    }
+
+    #text2 {
+        font-size: 48px; /* Smaller font size for tablets */
+    }
+
+    #text2 h1 {
+        font-size: 32px; /* Smaller font size for h1 in tablets */
+    }
+
+    .title-container h3 {
+        font-size: 32px; /* Smaller font size for tablets */
+
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .container,
+    .container2,
+    .container3,
+    .container4,
+    .container5,
+    .container6 {
+        padding: 0 15px; /* Verkleinern des Seitenabstands */
+        max-width: 100%; /* Erlaubt dem Container, die volle Breite zu nutzen */
+
+    }
+    .about-me,
+    .projects,
+    .myskills,
+    .contact-me {
+        padding: 0; /* Reduzierung des oberen und unteren Abstands */
+        width: 100%;
+        display:flex;
+        align-items: center;
+    }
+
+    .page-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        width: 100%;
+    }
+
+    .site-header {
+        height: auto; /* Adjust the height automatically */
+        padding: 10px; /* Add padding to shrink the header size */
+    }
+
+
+    #custom-text {
+        font-size: 32px; /* Smaller font size for tablets */
+    }
+
+    #text1 {
+        font-size: 24px;  /* Smaller font size for tablets */
+    }
+
+    #text2 {
+        font-size: 32px; /* Smaller font size for tablets */
+    }
+
+    #text2 h1 {
+        font-size: 24px; /* Smaller font size for h1 in tablets */
+    }
+
+    .burger-menu {
+        display: block; /* Show the burger menu */
+        position: absolute; /* Position it relative to its nearest positioned ancestor or to the initial containing block */
+        top: 20px; /* Adjust top position */
+        right: 20px; /* Adjust right position */
+        z-index: 1500; /* Ensure it's above other content */
+        cursor: pointer; /* Add pointer cursor to signify it's clickable */
+        width: 20px; /* Smaller width */
+        height: 20px;
+    }
+
+    .burger-menu div {
+        background-color: #fff; /* Set line color to white */
+        height: 3px; /* Set line thickness */
+        width: 30px; /* Set line width */
+        margin: 5px 0; /* Set space between lines */
+        transition: all 0.3s ease; /* Smooth transition for burger animation */
+        margin: 3px 0;
+    }
+
+    .text-container{
+        flex-direction: column; /* Elemente untereinander statt nebeneinander anordnen */
+    }
+    .row,
+    .skills,
+    .icons-grid {
+        flex-direction: column; /* Elemente untereinander statt nebeneinander anordnen */
+        align-items: center; /* Zentriert die Elemente */
+    }
+
+    .buttons-container {
+        flex-direction: column; /* Set buttons next to each other on smaller screens */
+        justify-content: center; /* Center the buttons in the container */
+        gap: 10px; /* Space between buttons */
+    }
+
+    .title-container h1 {
+        font-size: 48px; /* Smaller font size for tablets */
+    }
+    .title-container h3 {
+        font-size: 24px; /* Smaller font size for tablets */
+        margin: 10px;
+    }
+    
+
+    .about-me h2 {
+        font-size: 36px; /* Smaller font size for the heading on tablets */
+        margin-bottom: 10px; /* Less space below heading */
+    }
+
+    .about-me ul li {
+        flex-basis: 100%; /* Each item takes full width on smaller screens */
+    }
+
+    .about-me ul li::before {
+        display: block; /* Move the label above the content */
+        margin-bottom: 5px; /* Add some space below the label */
+        width: 100px;
+
+    }
+
+    .footer-nav-and-newsletter {
+        flex-direction: column; /* Buttons und Newsletter Stapel für schmalere Ansichten */
+    }
+
+    .footer-nav li,
+    .footer .newsletter input[type="email"],
+    .footer .newsletter button {
+        margin-bottom: 10px; /* Fügt unten einen Abstand hinzu, damit alles nicht zusammengedrückt wird */
+    }
+
+    #profile-image {
+        margin-top: 0px;
+        height: 400px; /* Adjust height for tablets */
+    }
+
+    .button {
+        width: 140px; /* Auto width for buttons to fit content */
+        margin-bottom: 0; /* Remove the bottom margin for side-by-side layout */
+    }
+
+    .skill {
+        flex-basis: 100%; /* Lässt die Fähigkeiten die volle Breite einnehmen */
+    }
+
+    nav ul {
+        position: fixed; /* Fixed position */
+        top: 0; /* Align to the top */
+        right: -100%; /* Start off-screen to the right */
+        width: 70%; /* Full viewport width */
+        height: 100vh; /* Full viewport height */
+        background-color: #333; /* Menu background color */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        justify-content: start; /* Align items to the start from the top */
+        padding-top: 100px; /* Padding from the top */
+        transition: right 0.3s ease; /* Smooth transition for menu animation */
+    }
+
+
+    nav ul li {
+        opacity: 1;
+    }
+
+    .nav-active {
+        right: 0; /* Bring the menu on-screen */
+    }
+
+    .nav-active li {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    .icon-wrapper {
+        margin-bottom: 20px; /* Fügt Abstand unter den Icons hinzu */
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Für Mobiltelefone */
+@media (max-width: 480px) {
+
+    .container,
+    .container2,
+    .container3,
+    .container4,
+    .container5,
+    .container6 {
+        padding: 0 15px; /* Verkleinern des Seitenabstands */
+        max-width: 100%; /* Erlaubt dem Container, die volle Breite zu nutzen */
+
+    }
+    .about-me,
+    .projects,
+    .myskills,
+    .contact-me {
+        padding: 0; /* Reduzierung des oberen und unteren Abstands */
+        width: 100%;
+        display:flex;
+        align-items: center;
+    }
+
+    .page-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        width: 100%;
+    }
+    
+    .site-header {
+        height: auto; /* Adjust the height automatically */
+        padding: 10px; /* Add padding to shrink the header size */
+    }
+
+    .text-container {
+        padding: 0; /* Entfernt das Padding innerhalb des Textcontainers */
+    }
+
+    .hello-text,
+    #custom-text,
+    .job-title {
+        font-size: smaller; /* Verkleinert die Schriftgröße für den Text */
+    }
+
+    #profile-image {
+        height: 300px; /* Adjust height for mobile phones */
+    }
+
+    .button {
+        padding: 6px 12px; /* Smaller padding for mobile */
+        font-size: 14px; /* Smaller font size for mobile */
+        margin: 3px; /* Smaller margin for mobile */
+    }
+
+    .about-me h2 {
+        font-size: 28px; /* Even smaller font size for the heading on mobile phones */
+    }
+
+    .skill-percent {
+        top: 20px; /* Positioniert die Prozentangaben anders, um auf kleinen Bildschirmen besser sichtbar zu sein */
+    }
+
+    .footer .footer-nav li a {
+        font-size: smaller; /* Verkleinert die Schriftgröße für die Fußzeilen-Links */
+    }
+
+    #text2 {
+        font-size: 32px; /* Even smaller font size for mobile phones */
+    }
+    #text2 h1 {
+        font-size: 20px; /* Even smaller font size for h1 in mobile phones */
+    }
+
+    .burger-menu {
+        display: block; /* Show the burger menu */
+        position: absolute; /* Position it relative to its nearest positioned ancestor or to the initial containing block */
+        top: 20px; /* Adjust top position */
+        right: 20px; /* Adjust right position */
+        z-index: 1500; /* Ensure it's above other content */
+        cursor: pointer; /* Add pointer cursor to signify it's clickable */
+        width: 20px; /* Smaller width */
+        height: 20px;
+    }
+
+    .burger-menu div {
+        background-color: #fff; /* Set line color to white */
+        height: 3px; /* Set line thickness */
+        width: 30px; /* Set line width */
+        margin: 5px 0; /* Set space between lines */
+        transition: all 0.3s ease; /* Smooth transition for burger animation */
+        margin: 3px 0;
+    }
+    nav ul {
+        width: 70%; /* Reduce width to give more space to content */
+        /* ... other styles ... */
+    }
+
 }
 
 

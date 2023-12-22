@@ -62,6 +62,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
             behavior: 'smooth' // Smooth scroll
         });
     });
+
+    const nav = document.querySelector('nav ul');
+    const navLinks = document.querySelectorAll('nav ul li a');
+    const burgerMenu = document.querySelector('.burger-menu');
+
+    // Function to toggle the menu
+    function toggleMenu() {
+        nav.classList.toggle('nav-active');
+        burgerMenu.classList.toggle('toggle');
+    }
+
+    // Event listener for burger menu click
+    burgerMenu.addEventListener('click', toggleMenu);
+
+    // Event listeners for nav item clicks
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (nav.classList.contains('nav-active')) {
+                toggleMenu(); // This will close the burger menu when a link is clicked
+            }
+        });
+    });
     
 });
 
